@@ -1,7 +1,7 @@
 # shipment-resolution-assistant
 A sample Shipment Resolution application demonstrating the usage of Generative AI in Java based applications.
 
-It consist of 3 modules
+It consist of 2 modules
 
 * shipment-resolution-service
 * shipment-details-service
