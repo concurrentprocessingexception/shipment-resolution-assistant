@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: Shipment Resolution Service
+bedrock:
+  region: eu-west-1
+  model: anthropic.claude-3-haiku-20240307-v1:0
+app:
+  api:
+    shipment-status-service:
+      url: http://localhost:8089/api/shipment/status
+  aws:
+    region: eu-west-1
+    sns:
+      topic-arn: YOUR_SNS_TOPIC
+logging:
+  level:
+    root: INFO
