@@ -18,9 +18,14 @@ public class ResolutionService {
 
     public ResolutionResult processEvent(ShipmentEvent event) {
         log.info("Processing Event : {}", event);
+        long start = System.currentTimeMillis();
         String summary = plannerAgent.planResolution(event.shipmentId());
-        log.debug("Event : {}, resolved!!! Summary : {}", event, summary);
-        return new ResolutionResult(event.shipmentId(), summary, "ShipmentTools may have been invoked!!!");
+        long duration = System.currentTimeMillis() - start;
+        log.debug("Event : {}, resolved!!! Summary : {}, Duration: {}", event, summary, duration);
+        return new ResolutionResult(
+                event.shipmentId(),
+                summary,
+                "ShipmentTools may have been invoked!!!");
     }
 }
 
